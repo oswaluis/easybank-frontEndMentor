@@ -1,0 +1,142 @@
+.header{
+    //hamburger open styles
+
+&.open{
+
+    .headerHamburger{
+        >span:first-child{
+        transform: rotate(45deg);
+    }
+
+        >span:nth-child(2){
+        opacity: 0;
+    }
+        >span:last-child{
+        transform: rotate(-45deg);
+    }
+    }
+    
+}
+    
+    nav{
+        position: relative;
+        background-color: $blanco;
+        padding-top: 1.0625rem;
+        padding-bottom: 1.0625rem;
+    }
+
+
+    &Logo{
+
+        img{
+            padding: 0;
+            width: 8.8125rem;
+            height: 1.375rem;
+
+        }
+    }
+    &Hamburger{//mobile menu
+
+        >span{
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $azuloscuro;
+            transition: all 300ms ease-in-out;
+            transform-origin: 3px 1px;
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+
+        // &.open{
+
+        //     >span:first-child{
+        //         transform: rotate(45deg);
+        //     }
+
+        //     >span:nth-child(2){
+        //         opacity: 0;
+        //     }
+        //     >span:last-child{
+        //         transform: rotate(-45deg);
+        //     }
+        // }
+
+    }
+
+    &Links{
+        
+        a{  
+            position: relative;
+            font-size: $font-sm;
+            transition: color 300ms ease-in-out;
+            color: $azulgris;
+        
+        &:not(:last-child){
+            margin-right: 32px;
+            }
+        &::before{
+            position: absolute;
+            content: "";
+            display: block;
+            height: 5px;
+            left: 0;
+            right: 0;
+            bottom: -30px;
+            background: linear-gradient(to right, $verdelima, $cyanbrillante);
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+        }
+        &:hover{
+                color: $azuloscuro;
+                &::before{
+                    opacity: 1;
+                }
+                
+            }
+
+
+        }
+    } 
+    &Btn{
+            font-size: $font-sm;
+            color: $blanco;
+            transition: opacity 300ms ease-in-out;
+
+            &:hover{
+                opacity:0.75 ;
+            }
+        }
+}
+//hamburger open styles
+
+.overlay{
+        opacity: 0;
+        position: fixed;
+        top: 0rem;
+        right: 0px;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient($azuloscuro, transparent);
+        
+    }
+
+    .headerMenu{
+            position: absolute;
+            width: calc(100% - 3rem);
+            background: $blanco;
+            margin: 1.5rem 1.5rem;
+            padding: 1.625rem;
+            border-radius: 3px;
+            
+
+            a{  
+                display: block;
+                color: $azuloscuro;
+                padding: 0.625rem;
+                text-align: center;
+                cursor: pointer;
+            }
+        
+    }

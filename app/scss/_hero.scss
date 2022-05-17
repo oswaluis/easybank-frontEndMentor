@@ -1,0 +1,66 @@
+.hero{
+    background-color:$grisclaro ;
+    .container{
+        @include breakpoint-up(large){
+        display: flex;
+        min-height: 41rem;
+        align-items: center;
+    }
+    }
+
+
+    &Image{
+        position: relative;
+        min-height: 17.5rem;
+        background-image: url('/images/bg-intro-mobile.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @include breakpoint-up(medium){
+            min-height: 25rem;
+            background-position: center 60%;
+
+        }
+
+        @include breakpoint-up(large){
+            flex: 3;
+            order: 2;
+            height: 41rem;
+            background-image: url('/images/bg-intro-desktop.svg');
+            background-position: left center;
+        }
+        &::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: url('/images/image-mockups.png');
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center center;
+            
+            @include breakpoint-up(medium){
+                background-size: 52%;
+    
+            }
+            @include breakpoint-up(large){
+                background-size: 80%;
+                top: 10%;
+                left: 5%;
+            }
+
+        }
+    }
+    &Text{
+        text-align: center;
+        @include breakpoint-up(large){
+            flex: 2;
+            order: 1;
+            text-align: left;
+        
+        }
+
+
+    }
+}
